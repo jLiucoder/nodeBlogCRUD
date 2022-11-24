@@ -7,7 +7,7 @@ const blogRoutes = require('./routes/blogRoutes')
 const { render } = require('ejs')
 // set var app as express app
 const app = express()
-// 'mongodb+srv://testUser:1234@nodetuts.f9yioi1.mongodb.net/node-tuts?retryWrites=true&w=majority'
+
 //connect to MONGODB
 const DBURI = key
 
