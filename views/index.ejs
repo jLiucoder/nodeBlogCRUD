@@ -1,0 +1,27 @@
+<html lang="en">
+    <%- include('./partials/head.ejs')%>
+
+    <body>
+
+<!--    This part includes the nav that we just extracted, to make this code cleaner-->
+        <%- include('./partials/nav.ejs') %>
+
+        <div class="blogs content">
+            <h2>All blogs</h2>
+<!--            this part uses dynamic template for blog content-->
+            <% if(blogs.length > 0){%>
+                <%blogs.forEach(blog =>{%>
+                    <a class="single" href="/blogs/<%= blog._id%> ">
+                        <h3 class="title"><%= blog.title %></h3>
+                        <p class="snippet"><%= blog.snippet %></p>
+                        <br/>
+                    </a>
+                <%})%>
+            <%}else{%>
+                <p>There are no blogs to display</p>
+            <%}%>
+        </div>
+
+    <%- include('./partials/footer.ejs')%>
+    </body>
+</html>
