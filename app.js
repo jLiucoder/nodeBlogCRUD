@@ -2,13 +2,14 @@
 const express = require('express')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-
+const key = require('./connectionString')
 const blogRoutes = require('./routes/blogRoutes')
 const { render } = require('ejs')
 // set var app as express app
 const app = express()
+
 //connect to MONGODB
-const DBURI = 'mongodb+srv://testUser:1234@nodetuts.f9yioi1.mongodb.net/node-tuts?retryWrites=true&w=majority'
+const DBURI = key
 
 mongoose.connect(DBURI).then(() => {
     app.listen(3000)
